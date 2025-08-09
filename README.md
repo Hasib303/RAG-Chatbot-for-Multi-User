@@ -113,7 +113,32 @@ Run the chatbot in interactive mode for real-time conversations:
 python main.py interactive
 ```
 
-Available commands:
+### Quick Start Example
+
+Here's how to start chatting:
+
+```bash
+$ python main.py interactive
+
+# Step 1: Set your user ID
+> /user john
+
+# Step 2: Start a session
+> /session
+
+# Step 3: Ask questions and get responses
+> What is machine learning?
+Assistant: Machine learning is a subset of artificial intelligence that enables computers to learn and make decisions from data without being explicitly programmed for every task. It involves algorithms that can identify patterns in data and make predictions based on that data.
+
+> How do neural networks work?
+Assistant: Neural networks are computing systems inspired by biological neural networks. They consist of interconnected nodes (neurons) that process information through weighted connections and activation functions...
+
+# Use /quit to exit
+> /quit
+Goodbye!
+```
+
+### Available Commands
 - `/user <user_id>` - Set user ID
 - `/session [session_id]` - Start new session or specify session ID
 - `/history` - Show conversation history
@@ -210,7 +235,7 @@ python main.py interactive
 > /quit
 
 # User 2
-> /user bob
+> /user hasib
 > /session
 > How do neural networks work?
 > /sessions  # Shows only bob's sessions
