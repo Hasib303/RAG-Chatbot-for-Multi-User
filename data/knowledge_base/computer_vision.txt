@@ -1,0 +1,33 @@
+Computer Vision
+
+Computer vision is a field of artificial intelligence that trains computers to interpret and understand visual information from the world, such as images and videos. It aims to automate tasks that the human visual system can do.
+
+Key Computer Vision Tasks:
+1. Image Classification: Categorizing images into predefined classes
+2. Object Detection: Locating and identifying objects within images
+3. Semantic Segmentation: Classifying each pixel in an image
+4. Instance Segmentation: Distinguishing between different instances of objects
+5. Facial Recognition: Identifying or verifying individuals from facial features
+6. Optical Character Recognition (OCR): Converting text in images to machine-readable text
+
+Common Techniques:
+- Convolutional Neural Networks (CNNs): The backbone of modern computer vision
+- Image preprocessing: Resizing, normalization, data augmentation
+- Feature extraction: Identifying important visual features
+- Transfer learning: Using pre-trained models for new tasks
+
+Applications:
+- Autonomous vehicles and self-driving cars
+- Medical image analysis and diagnosis
+- Security and surveillance systems
+- Augmented reality and virtual reality
+- Quality control in manufacturing
+- Agricultural monitoring and crop analysis
+- Retail and e-commerce product recognition
+
+Challenges in Computer Vision:
+- Lighting and weather conditions
+- Occlusion and partial visibility
+- Scale and viewpoint variations
+- Real-time processing requirements
+- Handling diverse and complex scenes
