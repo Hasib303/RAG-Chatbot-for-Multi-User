@@ -18,43 +18,12 @@ A complete Retrieval-Augmented Generation (RAG) chatbot prototype using the dist
 2. **Knowledge Base & RAG**: FAISS vector database with local embedding model (all-MiniLM-L6-v2)
 3. **Chat History Management**: JSON-based local storage organized by user ID and session ID
 
-## RAG Performance Benefits
-
-The RAG system provides significant improvements over standalone language model responses:
-
-| Metric | Without RAG | With RAG | Improvement |
-|--------|-------------|----------|-------------|
-| Domain Keywords | 2-3 terms | 5-8 terms | +60-150% |
-| Response Length | 20-40 words | 60-120 words | +200% |
-| Accuracy | Generic answers | Specific, accurate | Higher |
-| Source Reference | None | Knowledge base docs | Context-aware |
-
-### Sample Comparison
-
-**Query:** "What is overfitting in machine learning?"
-
-**Without RAG:**
-> "Overfitting happens when a model learns too much from training data."
-
-**With RAG:**
-> "Overfitting occurs when a model learns the training data too well, including noise and irrelevant patterns, leading to poor generalization on new data. It can be prevented through techniques like cross-validation, regularization, dropout, early stopping, and using more training data."
-
-**Improvement:** 3x more detailed, includes prevention methods from knowledge base.
-
-## Setup Instructions
-
-### Prerequisites
-- Python 3.8 or higher
-- 8GB+ RAM (16GB recommended)
-- 10GB+ free disk space
-- Optional: NVIDIA GPU with CUDA support for faster inference
-
 ### Installation
 
 1. Clone the repository:
 ```bash
 git clone <repository-url>
-cd Task_1
+cd RAG-Chatbot-for-Multi-User
 ```
 
 2. Create a virtual environment (recommended):
@@ -268,27 +237,6 @@ Test session management for a single user:
 - Sessions within a user are isolated - `/history` shows only current session
 - Users cannot access other users' sessions or history
 
-## Sample Test Set with Expected Outputs
-
-### NLP Performance Tests
-
-| Query | Expected Key Terms | Response Type |
-|-------|-------------------|---------------|
-| "What is machine learning?" | artificial intelligence, data, algorithms, patterns | Foundational ML concepts |
-| "How do neural networks work?" | neurons, layers, weights, connections | Network architecture |
-| "What are the types of machine learning?" | supervised, unsupervised, reinforcement | ML categorization |
-| "What is overfitting?" | training data, generalization, cross-validation | ML problem + solutions |
-| "Explain transformers" | attention, self-attention, sequence | Modern NLP architecture |
-
-### RAG Performance Tests
-
-| Query | Expected Source | Improvement Indicator |
-|-------|----------------|----------------------|
-| "What is computer vision used for?" | computer_vision.txt | Specific applications listed |
-| "How does RAG work?" | rag_systems.txt | Detailed process steps |
-| "What are CNNs?" | Both neural_networks.txt + computer_vision.txt | Cross-document synthesis |
-| "Benefits of deep learning" | neural_networks.txt | Structured advantages list |
-
 ### Conversational Context Tests
 
 ```bash
@@ -304,8 +252,6 @@ Test session management for a single user:
 User: What is machine learning?
 Assistant: Machine learning is a subset of artificial intelligence that enables computers to learn and make decisions from data without being explicitly programmed for every task. It involves algorithms that can identify patterns in data and make predictions based on that data.
 
-User: How does RAG improve language models?
-Assistant: RAG improves language models by combining information retrieval with text generation, allowing models to access external knowledge for more accurate and up-to-date responses. This addresses limitations of purely generative models by grounding responses in retrieved factual information.
 ```
 
 ## Development Notes & Assumptions
@@ -351,24 +297,6 @@ Assistant: RAG improves language models by combining information retrieval with 
    - Check if knowledge base documents are loaded
    - Verify embedding model initialization
    - Review query formatting
-
-### Performance Optimization
-
-- **GPU Usage**: Install `torch` with CUDA support for faster inference
-- **Memory Management**: Adjust batch sizes based on available RAM
-- **Vector Search**: Tune FAISS index parameters for better retrieval speed
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests for new functionality
-5. Submit a pull request
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Acknowledgments
 
