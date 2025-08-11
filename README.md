@@ -254,50 +254,6 @@ Assistant: Machine learning is a subset of artificial intelligence that enables 
 
 ```
 
-## Development Notes & Assumptions
-
-### Implementation Assumptions
-- **Local Storage**: All data (models, vectors, chat history) stored locally for privacy
-- **Text-Only Knowledge Base**: Currently supports `.txt` files; can be extended to PDFs, docs
-- **Single Language**: Optimized for English; multilingual support requires model changes
-- **CPU-First Design**: Runs on CPU by default; GPU acceleration optional for performance
-
-### Technical Decisions
-- **FAISS IndexFlatL2**: Chosen for exact search accuracy over approximate methods
-- **Chat Template Format**: Uses DeepSeek's native format for optimal model performance
-- **JSON Storage**: Simple, human-readable format for easy debugging and migration
-- **Modular Architecture**: Separate classes for easy testing and component replacement
-
-### Scalability Considerations
-- **Memory Usage**: Current design loads full model in memory; consider quantization for larger deployments
-- **Vector Storage**: FAISS scales to millions of documents; current setup handles thousands efficiently
-- **Session Management**: JSON files suitable for individual/small team use; database recommended for enterprise
-
-### Future Enhancements
-- **Document Types**: Add PDF, Word, HTML parsing capabilities
-- **Advanced Retrieval**: Implement hybrid search (dense + sparse) for better accuracy
-- **Model Quantization**: Add 4-bit/8-bit quantization for memory efficiency
-- **Web Interface**: Create FastAPI/Streamlit frontend for easier interaction
-
-## Troubleshooting
-
-### Common Issues
-
-1. **Model Loading Errors**:
-   - Ensure sufficient RAM/VRAM
-   - Check internet connection for initial model download
-   - Verify HuggingFace cache directory permissions
-
-2. **Slow Performance**:
-   - Consider using GPU acceleration
-   - Reduce batch size or max_length parameters
-   - Monitor system resources
-
-3. **Empty Responses**:
-   - Check if knowledge base documents are loaded
-   - Verify embedding model initialization
-   - Review query formatting
-
 ## Acknowledgments
 
 - DeepSeek AI for the distilled R1 model

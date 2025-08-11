@@ -4,7 +4,7 @@ __pycache__/
 .venv/
 
 models/
-data/vector_store/
+
 data/chat_history/
 
 .DS_Store
